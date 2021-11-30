@@ -9,21 +9,20 @@ package sp4_console_blancuzzi._claude.java;
  * @author theob
  */
 public class Joueur {
-    String Nom ;
+    String nom ;
     String couleur ;
-    Jeton [] ListeJetons = new Jeton[21];
+    int [] ListeJetons = new int[21];
     int nombreJetonsRestants = ListeJetons.length ;
-    int nombreDesintegrateur;
-    
-    public Joueur(String NomJoueur){
-        Nom = NomJoueur ; 
+   
+    public void Joueur(String NomJoueur){
+        nom = NomJoueur ;
     }
    
     public void affecterCouleur(String CouleurJoueur){
         couleur = CouleurJoueur ;
     }
    
-    public boolean ajouterJeton(Jeton JetonJoueur){
+    public boolean ajouterJeton(int JetonJoueur){
            if(nombreJetonsRestants!=21){
                ListeJetons[nombreJetonsRestants]=JetonJoueur ;
                return true ;
@@ -31,16 +30,5 @@ public class Joueur {
            else {
                return false ;
            }          
-    }   
-    void obtenirDesintegrateur(){
-        nombreDesintegrateur+=1;
-    }
-   
-    boolean utiliserDesintegrateur(){
-        if(nombreDesintegrateur==0){
-            return false;
-        }
-        nombreDesintegrateur--;
-        return true;
     }
 }

@@ -15,18 +15,23 @@ package sp4_console_blancuzzi._claude.java;
         boolean desintegrateur;
      
      public void Cellule() {
-         trouNoir=false;
-         desintegrateur=false;
-         jetonCourant=null;
+         trouNoir=false;//initialise trouNoir
+         desintegrateur=false;//initialise desintegrateur
+         jetonCourant=null;//initialise jetoncourant
      }
      
      public boolean affecterJeton(Jeton j) {
-         if(jetonCourant==null){
+         
+         if(jetonCourant==null){//Verifie si jeton courant n'a pas de valeur. Si oui, on lui incremente la valeur d'un nouveau jeton
              jetonCourant=j;
-           return true;
+         if (prensenceTrouNoir()==true){//Condition verifiant la presence de trou noir
+             activerTrouNoir();//Si il y a presence de trou trou noir alors on l'active
+         }    
+           return true; //retourne vrai
          }
+         
          else{
-             return false;
+             return false;//retourne faux sinon
          }
      }
      
@@ -35,7 +40,7 @@ package sp4_console_blancuzzi._claude.java;
      }
      
      public boolean supprimerJeton() {
-         jetonCourant=null;
+         jetonCourant=null;//incremente la nullité a jeton courant
          return true;
      }
      
@@ -61,26 +66,26 @@ package sp4_console_blancuzzi._claude.java;
      
      public boolean prensenceTrouNoir() {
        if(trouNoir==true){
-           return true;
+           return true;//retourne vrai si il y a un trou noir
         }
        else{
-           return false;
+           return false;//retourne faux sinon
        }
        }
      
      public boolean presenceDesintegrateur() {
        if(desintegrateur==true){
-           return true;
+           return true;//retourne vrai si il y a un desintegrateur
         }
        else{
-           return false;
+           return false;//retourne faux sinon
        }
        }
      
      public String lireCouleurDuJeton() {
        if(jetonCourant!=null){
-           jetonCourant.lireCouleur();
-           return jetonCourant.couleur;
+           jetonCourant.lireCouleur();//utilise la fonction lircouleur sur jetoncourant
+           return jetonCourant.couleur;//retourne la couleur de jetoncourant
        }
        else{
            return "vide";
@@ -89,17 +94,17 @@ package sp4_console_blancuzzi._claude.java;
      
      public boolean recupererDesintegrateur() {
        if(desintegrateur==true){
-            return false;
+            return false;//retourne faux si il y a un desintegratueur
         }
         else{
-            return true;
+            return true;//retourne vrai sinin
         }
      }
      
      public boolean activerTrouNoir() {
-      if(trouNoir==true & jetonCourant!=null){
-          jetonCourant=null;
-          trouNoir=false;
+      if(trouNoir==true & jetonCourant!=null){//condition verifiant que jeton courant ne soit pas nul et qu'il y ai un trou noir
+          jetonCourant=null;//on incrémente la nullité a jetoncourant
+          trouNoir=false;//trou noir prend la valeur vrai
           return true;
       }
       else{
@@ -107,4 +112,3 @@ package sp4_console_blancuzzi._claude.java;
       }
      }
    }
- 
