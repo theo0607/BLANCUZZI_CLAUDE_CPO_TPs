@@ -14,9 +14,9 @@ public class Lightsout {
     
     public Lightsout(int taillegrille){ // utilisation d'un constructeur 
       
-      grille = new boolean [taillegrille][taillegrille]; // création de notre grille
+      grille = new boolean [taillegrille][taillegrille]; 
       
-      for (int i=0 ; i<taillegrille; i++){
+      for (int i=0 ; i<taillegrille; i++){// création de notre grille
           for (int j=0 ; j<taillegrille; j++){
               grille[i][j] = false; // au début toutes nos cases sont éteintes 
           }
@@ -66,8 +66,8 @@ public class Lightsout {
     }
    
    public void debutpartie(){
-       for(int i=0 ; i<grille.length ; i++){ // parcours la grille
-          for(int j=0 ; j<grille.length ; j++){ // parcours la grille
+       for(int i=0 ; i<grille.length ; i++){ // parcours les lignes de la grille
+          for(int j=0 ; j<grille.length ; j++){ // parcours les colonnes de la grille
                 if(Math.random()>0.4){ // créé un nombre aléatoire pour chaque case de la grille
                  grille[i][j]=true;// si ce nombre est supérieur à 0.8 alors la case devient colorée 
                 }                  // augmenter ou diminuer le nombre permet de modifier la difficulté 
@@ -96,8 +96,8 @@ public class Lightsout {
    }
    
    public boolean etregagnant(){
-       for(int i=0 ; i<grille.length ; i++){ // parcours la grille
-          for(int j=0 ; j<grille.length ; j++){ // parcours la grille
+       for(int i=0 ; i<grille.length ; i++){ // parcours les lignes de la grille
+          for(int j=0 ; j<grille.length ; j++){ // parcours les colonnnes de la grille
             if(grille[i][j]==true){ // si on trouve une case de la grille allumé
                 return false; // alors on renvoie false on a pas gagné 
             }
