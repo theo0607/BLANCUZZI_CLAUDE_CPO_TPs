@@ -10,15 +10,15 @@ package ligthsout;
  */
 public class Lightsout {
     
-    public boolean [ ][ ] grille;
+    public boolean [ ][ ] grille; //initialisation de la grille
     
-    public Lightsout(int taillegrille){
+    public Lightsout(int taillegrille){ // utilisation d'un constructeur 
       
-      grille = new boolean [taillegrille][taillegrille];
+      grille = new boolean [taillegrille][taillegrille]; // création de notre grille
       
       for (int i=0 ; i<taillegrille; i++){
           for (int j=0 ; j<taillegrille; j++){
-              grille[i][j] = false;
+              grille[i][j] = false; // au début toutes nos cases sont éteintes 
           }
       }
    }
@@ -29,19 +29,19 @@ public class Lightsout {
        for (j=0;j<5;j++){
            for (i=0;i<5;i++){
                     if (grille[i][j]==true){
-                        System.out.print("\033[36mO \033[30m");
+                        System.out.print("\033[36mO \033[30m"); // attribue une couleur pour les cases allumées
                     }
 
                     else {
-                        System.out.print("O ");
+                        System.out.print("O "); // attribue une couleur pour les cases éteintes
                     }
            }
-        System.out.println("" + (j+1));
+        System.out.println("" + (j+1)); // cette partie permet d'afficher les numéros des lignes et des colonnes
         }
         for(int l=0; l<5;l++){
             System.out.print("" + (l+1) + " ");
         }
-        System.out.println();
+        System.out.println(); // permet d'afficher notre grille 
     }
    
    public void afficherGrilleDifficile(){
@@ -50,27 +50,27 @@ public class Lightsout {
        for (j=0;j<9;j++){
            for (i=0;i<9;i++){
                     if (grille[i][j]==true){
-                        System.out.print("\033[36mO \033[30m");
+                        System.out.print("\033[36mO \033[30m"); // attribue une couleur pour les cases allumées
                     }
 
                     else {
-                        System.out.print("O ");
+                        System.out.print("O "); // attribue une couleur pour les cases éteintes
                     }
            }
-        System.out.println("" + (j+1));
+        System.out.println("" + (j+1)); // cette partie permet d'afficher les numéros des lignes et des colonnes
         }
         for(int l=0; l<9;l++){
             System.out.print("" + (l+1) + " ");
         }
-        System.out.println();
+        System.out.println(); // permet d'afficher notre grille 
     }
    
    public void debutpartie(){
-       for(int i=0 ; i<grille.length ; i++){
-          for(int j=0 ; j<grille.length ; j++){
-                if(Math.random()>0.65){
-                 grille[i][j]=true;
-                }
+       for(int i=0 ; i<grille.length ; i++){ // parcours la grille
+          for(int j=0 ; j<grille.length ; j++){ // parcours la grille
+                if(Math.random()>0.4){ // créé un nombre aléatoire pour chaque case de la grille
+                 grille[i][j]=true;// si ce nombre est supérieur à 0.8 alors la case devient colorée 
+                }                  // augmenter ou diminuer le nombre permet de modifier la difficulté 
             }
         }
    }
