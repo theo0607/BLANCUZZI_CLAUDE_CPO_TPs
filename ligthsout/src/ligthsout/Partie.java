@@ -80,7 +80,8 @@ public class Partie {
         }
         System.out.println("Bravo "+pseudojoueur+" tu as gagné en "+compteur+"tours!!!");// on affiche le peudo du joueur et le nombre de tour qu'il a mis pour réussir
      }
-   }    
+   }
+    
 }
     
 
