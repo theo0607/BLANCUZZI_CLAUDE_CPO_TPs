@@ -49,7 +49,7 @@ public class Partie {
             jeu.verifplacement(c,l); // si l'utilisateur à sélectionné une position sur les bords de la grille
             jeu.afficherGrilleFacile(); // on affiche la grille a la fin de chaque tour 
         }
-        System.out.println("Bravo "+pseudojoueur+" tu as gagné en "+compteur+" tours!!!");  
+        System.out.println("Bravo "+pseudojoueur+" tu as gagné en "+compteur+" tours!!!"); // on affiche le peudo du joueur et le nombre de tour qu'il a mis pour réussir
      }
      
      if(niveaudifficulté==2){ // si l'utilisateur à choisi le niveau difficile
@@ -78,10 +78,9 @@ public class Partie {
             jeu.verifplacement(c,l); // si l'utilisateur à sélectionné une position sur les bords de la grille
             jeu.afficherGrilleDifficile(); // on affiche la grille a la fin de chaque tour 
         }
-        System.out.println("Bravo "+pseudojoueur+" tu as gagné en "+compteur+"tours!!!");  
+        System.out.println("Bravo "+pseudojoueur+" tu as gagné en "+compteur+"tours!!!");// on affiche le peudo du joueur et le nombre de tour qu'il a mis pour réussir
      }
-   }
-      
+   }    
 }
     
 

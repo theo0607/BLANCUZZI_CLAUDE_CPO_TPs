@@ -104,6 +104,5 @@ public class Lightsout {
           }
         }
        return true; // sinon on a gagné 
-   }
-    
+   }  
 }
