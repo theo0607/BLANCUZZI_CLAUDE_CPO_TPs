@@ -96,14 +96,14 @@ public class Lightsout {
    }
    
    public boolean etregagnant(){
-       for(int i=0 ; i<grille.length ; i++){
-          for(int j=0 ; j<grille.length ; j++){
-            if(grille[i][j]==true){
-                return false;
+       for(int i=0 ; i<grille.length ; i++){ // parcours la grille
+          for(int j=0 ; j<grille.length ; j++){ // parcours la grille
+            if(grille[i][j]==true){ // si on trouve une case de la grille allumé
+                return false; // alors on renvoie false on a pas gagné 
             }
-       }
-    }
-       return true;
+          }
+        }
+       return true; // sinon on a gagné 
    }
     
 }

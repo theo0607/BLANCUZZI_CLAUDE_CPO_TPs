@@ -24,7 +24,7 @@ public class Partie {
        
      if(niveaudifficulté==1){ // si l'utilisateur à choisi le niveau facile
         Lightsout jeu = new Lightsout(5); // la taille de la grille est de 5
-        jeu.debutpartie(); // on génère les cases allumées au départ
+        jeu.debutpartie(); // on allume certaines cases aléatoirement au départ
         jeu.afficherGrilleFacile(); // on affiche la grille 
         
         int compteur; // on initialise le compteur de tour
@@ -54,29 +54,29 @@ public class Partie {
      
      if(niveaudifficulté==2){ // si l'utilisateur à choisi le niveau difficile
         Lightsout jeu = new Lightsout(9); // la taille de la grille est de 9
-        jeu.debutpartie();
-        jeu.afficherGrilleDifficile();
+        jeu.debutpartie(); // on allume certaines cases aléatoirement au départ
+        jeu.afficherGrilleDifficile(); // on affiche la grille 
         
-        int compteur;
-        compteur = 0;
+        int compteur; // on initialise le compteur de tour
+        compteur = 0; // on lui attribue la valeur 0 car l'utilisateur n'a pas encore joué 
         
-        while(jeu.etregagnant() != true){  
-            compteur += 1;
+        while(jeu.etregagnant() != true){  // tant que le joueur n'a pas gagné on continue 
+            compteur += 1; // on augmente de 1 valeur du compteur à chaque tour
             System.out.println("veuillez entrer une colonne :");
-            int c = sc.nextInt();
+            int c = sc.nextInt(); // on demande à l'utilisateur de choisir une colonne
             System.out.println("veuillez entrer une ligne :");
-            int l = sc.nextInt();
+            int l = sc.nextInt(); // on demande à l'utilisateur de choisir une ligne
             
-            if(c>9){
+            if(c>9){ // on vérifie si l'utilisateur n'a pas entré une position hors de la grille
               System.out.println("veuillez choisir une position valide");
               sc.nextInt();
             }
-            if(l>9){
+            if(l>9){ // on vérifie si l'utilisateur n'a pas entré une position hors de la grille
               System.out.println("veuillez choisir une position valide");
               sc.nextInt();
             }
-            jeu.verifplacement(c,l);
-            jeu.afficherGrilleDifficile();
+            jeu.verifplacement(c,l); // si l'utilisateur à sélectionné une position sur les bords de la grille
+            jeu.afficherGrilleDifficile(); // on affiche la grille a la fin de chaque tour 
         }
         System.out.println("Bravo "+pseudojoueur+" tu as gagné en "+compteur+"tours!!!");  
      }
