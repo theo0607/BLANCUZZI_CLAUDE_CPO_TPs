@@ -64,5 +64,15 @@ public class Lightsout {
         }
         System.out.println();
     }
+   
+   public void debutpartie(){
+       for(int i=0 ; i<grille.length ; i++){
+          for(int j=0 ; j<grille.length ; j++){
+                if(Math.random()>0.7){
+                 grille[i][j]=true;
+                }
+            }
+        }
+   }
     
 }
