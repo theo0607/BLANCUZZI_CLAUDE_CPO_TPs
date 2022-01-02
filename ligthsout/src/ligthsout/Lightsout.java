@@ -23,4 +23,46 @@ public class Lightsout {
       }
    }
     
+    public void afficherGrilleFacile(){
+       int i;
+       int j;
+       for (j=0;j<5;j++){
+           for (i=0;i<5;i++){
+                    if (grille[i][j]==true){
+                        System.out.print("\033[36mO \033[30m");
+                    }
+
+                    else {
+                        System.out.print("O ");
+                    }
+           }
+        System.out.println("" + (j+1));
+        }
+        for(int l=0; l<5;l++){
+            System.out.print("" + (l+1) + " ");
+        }
+        System.out.println();
+    }
+   
+   public void afficherGrilleDifficile(){
+       int i;
+       int j;
+       for (j=0;j<9;j++){
+           for (i=0;i<9;i++){
+                    if (grille[i][j]==true){
+                        System.out.print("\033[36mO \033[30m");
+                    }
+
+                    else {
+                        System.out.print("O ");
+                    }
+           }
+        System.out.println("" + (j+1));
+        }
+        for(int l=0; l<9;l++){
+            System.out.print("" + (l+1) + " ");
+        }
+        System.out.println();
+    }
+    
 }
