@@ -8,3 +8,6 @@ package ligthsout;
  *
  * @author theob
  */
+public class Lightsout {
+    
+}
