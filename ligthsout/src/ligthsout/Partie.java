@@ -14,7 +14,10 @@ public class Partie {
      
     public static void main(String[] args){
         
-     Scanner sc = new Scanner(System.in);      
+     Scanner sc = new Scanner(System.in);  
+        
+        System.out.println("veuillez entrer un pseudo: ");
+        String pseudojoueur = sc.nextLine();
         
         System.out.println("veuillez entrer 1 pour facile et 2 pour difficile");
         int niveaudifficulté = sc.nextInt();
@@ -44,7 +47,7 @@ public class Partie {
             jeu.verifplacement(c,l);
             jeu.afficherGrilleFacile();
         }
-        System.out.println("Bravo tu as gagné en "+compteur+"tours!!!");  
+        System.out.println("Bravo "+pseudojoueur+" tu as gagné en "+compteur+" tours!!!");  
      }
      
      if(niveaudifficulté==2){
@@ -73,7 +76,7 @@ public class Partie {
             jeu.verifplacement(c,l);
             jeu.afficherGrilleDifficile();
         }
-        System.out.println("Bravo tu as gagné en "+compteur+"tours!!!");  
+        System.out.println("Bravo "+pseudojoueur+" tu as gagné en "+compteur+"tours!!!");  
      }
    }
       

@@ -68,7 +68,7 @@ public class Lightsout {
    public void debutpartie(){
        for(int i=0 ; i<grille.length ; i++){
           for(int j=0 ; j<grille.length ; j++){
-                if(Math.random()>0.7){
+                if(Math.random()>0.65){
                  grille[i][j]=true;
                 }
             }
