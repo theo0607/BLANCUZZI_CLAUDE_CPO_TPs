@@ -74,5 +74,36 @@ public class Lightsout {
             }
         }
    }
+   
+   public void verifplacement(int c,int l){
+       grille[c-1][l-1] =! grille[c-1][l-1];
+       
+       if(c-1<grille.length - 1){
+       grille[c+1-1][l-1] =! grille[c+1-1][l-1];
+       }
+       
+       if(l-1<grille.length - 1){
+       grille[c-1][l+1-1] =! grille[c-1][l+1-1];
+       }
+       
+       if(c-1>0){
+       grille[c-1-1][l-1] =! grille[c-1-1][l-1];
+       }
+       
+       if(l-1>0){
+       grille[c-1][l-1-1] =! grille[c-1][l-1-1];
+       }
+   }
+   
+   public boolean etregagnant(){
+       for(int i=0 ; i<grille.length ; i++){
+          for(int j=0 ; j<grille.length ; j++){
+            if(grille[i][j]==true){
+                return false;
+            }
+       }
+    }
+       return true;
+   }
     
 }
