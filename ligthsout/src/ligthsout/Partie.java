@@ -26,7 +26,57 @@ public class Partie {
         
         int compteur;
         compteur = 0;
-      }
-    }
-    
+      while(jeu.etregagnant() != true){  
+            compteur += 1;
+            System.out.println("veuillez entrer une colonne :");
+            int c = sc.nextInt();
+            System.out.println("veuillez entrer une ligne :");
+            int l = sc.nextInt();
+            
+            if(c>5){
+              System.out.println("veuillez choisir une position valide");
+              sc.nextInt();
+            }
+            if(l>5){
+              System.out.println("veuillez choisir une position valide");
+              sc.nextInt();
+            }
+            jeu.verifplacement(c,l);
+            jeu.afficherGrilleFacile();
+        }
+        System.out.println("Bravo tu as gagné en "+compteur+"tours!!!");  
+     }
+     
+     if(niveaudifficulté==2){
+        Lightsout jeu = new Lightsout(9);  
+        jeu.debutpartie();
+        jeu.afficherGrilleDifficile();
+        
+        int compteur;
+        compteur = 0;
+        
+        while(jeu.etregagnant() != true){  
+            compteur += 1;
+            System.out.println("veuillez entrer une colonne :");
+            int c = sc.nextInt();
+            System.out.println("veuillez entrer une ligne :");
+            int l = sc.nextInt();
+            
+            if(c>9){
+              System.out.println("veuillez choisir une position valide");
+              sc.nextInt();
+            }
+            if(l>9){
+              System.out.println("veuillez choisir une position valide");
+              sc.nextInt();
+            }
+            jeu.verifplacement(c,l);
+            jeu.afficherGrilleDifficile();
+        }
+        System.out.println("Bravo tu as gagné en "+compteur+"tours!!!");  
+     }
+   }
+      
 }
+    
+
